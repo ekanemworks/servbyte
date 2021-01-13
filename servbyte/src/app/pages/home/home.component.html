@@ -1,0 +1,54 @@
+<mat-toolbar>
+  <span>ServByte</span>
+  <div style="flex: 1 1 auto;"></div>
+  <button mat-button routerLink="/createaccount" >Signup</button>
+  <button mat-button routerLink="/login" >Login</button>
+</mat-toolbar>
+
+
+
+  <!-- Wave property -->
+  <div style="  background: linear-gradient(0deg, #a8a7a8 0%, rgb(104, 211, 206) 100%);">
+
+    <br><br><br><br>
+   <div style="color: #fff; font-size: 30px; text-align: center;" >Find and Order!</div>
+    <br><br><br>
+
+      <svg class="hero-waves"  viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)"/>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)"/>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9" fill="#fff"/>
+        </g>
+      </svg>
+
+  </div>
+  <!-- End of wave property -->
+
+<br><br>
+
+
+<h3 style="text-align: center;">{{nocategoryError}}</h3>
+<mat-grid-list cols="4">
+  <mat-grid-tile routerLink="/foodsearch" >
+    Food
+  </mat-grid-tile>
+  <mat-grid-tile (click)="nocategory()">
+    Laundry
+  </mat-grid-tile>
+  <mat-grid-tile (click)="nocategory()">
+    Pharmacy
+  </mat-grid-tile>
+  <mat-grid-tile (click)="nocategory()">
+    Grocery
+  </mat-grid-tile>
+</mat-grid-list>
+
+

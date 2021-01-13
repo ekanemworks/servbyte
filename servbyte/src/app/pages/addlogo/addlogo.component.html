@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <span>ServByte</span>
+  <div style="flex: 1 1 auto;"></div>
+  <button mat-button routerLink="/dashboard">Back to Home</button>
+</mat-toolbar>
+<br><br>
+
+
+<div style=" margin: auto;">
+  <form >
+
+    <mat-card style="width: 290px; margin: auto; text-align: center;">
+      <mat-card-title>
+        Add Company Logo
+      </mat-card-title>
+      <mat-card-content>
+        <br><br>
+        <input style="border: 1px solid #ddd;" type="file" (change)="onFileChanged($event)" />
+        <br><br>
+
+      </mat-card-content>
+      <mat-card-actions>
+
+        <button mat-raised-button (click)="uploadimg()">UPLOAD</button>
+
+        {{errorcheck}}
+
+      </mat-card-actions>
+    </mat-card>
+
+
+
+  </form>
+</div>

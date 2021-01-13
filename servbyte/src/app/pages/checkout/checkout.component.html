@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <span routerLink="/">ServByte</span>
+  <div style="flex: 1 1 auto;"></div>
+  <button mat-button  routerLink="/createaccount">Signup</button>
+  <button mat-button  routerLink="/login">Login</button>
+</mat-toolbar>
+<br>
+
+<div>
+  <img src="{{WEBSITE}}{{mealdata['picture']}}" alt="" style="width: 200px;">
+  <div class="checkoutclass">
+    price: {{mealdata['price']}}
+  </div>
+  <div class="checkoutclass">
+    Description: {{mealdata['description']}}
+  </div>
+  <div class="checkoutclass">
+    Delivery Companies available:
+
+    <div class="checkoutclass">
+      Select
+    </div>
+
+  </div>
+  <div class="checkoutclass">
+
+    <a href="{{WEBSITE}}paystack-payment.php?id={{mealdata['id']}}"><button mat-stroked-button >Proced to Payment</button></a>
+  </div>
+</div>
+

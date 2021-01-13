@@ -1,0 +1,73 @@
+<mat-toolbar>
+  <span routerLink="/">ServByte</span>
+  <div style="flex: 1 1 auto;"></div>
+  <button mat-button  routerLink="/createaccount">Signup</button>
+  <button mat-button  routerLink="/login">Login</button>
+</mat-toolbar>
+<br>
+<div style="text-align: center; font-weight: bold; font-size: 20px;">
+  Food vendors online
+</div>
+<div>
+  <section style="margin: 10px;">
+
+    <mat-toolbar>
+
+    <div style="font-weight: bold; font-size: 17px;  color: #000;">
+
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>City</mat-label>
+        <mat-select  name="city" [(ngModel)]="filtercity" class="form-control">
+          <mat-option value="Abuja">Abuja</mat-option>
+          <mat-option value="Lagos">Lagos</mat-option>
+          <mat-option value="Ibadan">Ibadan</mat-option>
+          <mat-option value="Uyo">Uyo</mat-option>
+          <mat-option value="Port Hacourt">Port Hacourt</mat-option>
+          <mat-option value="Enugu">Enugu</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <a mat-stroked-button (click)="Filter()" >Filter Results</a>
+    </mat-toolbar>
+
+    <!-- To show Error Compensation when there is no Meal in a City -->
+    <div style="text-align: center; font-weight: bold;">{{ErrorMessage}}</div>
+
+
+
+    <mat-grid-list [cols]="gridconfig" rowHeight="2:3" (window:resize)="onResize($event)"  >
+      <mat-grid-tile *ngFor="let meal of typestandard" >
+
+
+        <mat-card routerLink="/checkout/{{meal['id']}}">
+          <mat-card-content>
+            <div>
+              <img src="{{WEBSITE}}{{meal['picture']}}"
+              style="width: 100%;" alt="">
+            </div>
+            <div style="background: #f5f5f5; margin: 3px;">
+            <b> Name:</b> {{meal["mealname"]}}
+            </div>
+            <div style="background: #f5f5f5; margin: 3px;">
+             <b> Price:</b> {{meal["price"]}}
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+
+
+
+  </section>
+
+
+
+</div>
